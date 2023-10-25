@@ -1,3 +1,38 @@
+db.createCollection('glasses', {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: ["_id", "product_graduation_l", "product_graduation_r", "product_material", "product_price"],
+			properties: {
+				_id: {
+					bsonType: "objectId",
+					description: "type objectId, it is required, and store the product brand id",
+					
+				},
+				product_graduation_l: {
+					bsonType: "float",
+					description: "type float, it is required, and store the product graduation",
+					
+				},
+				product_graduation_r: {
+					bsonType: "float",
+					description: "type float, it is required, and store the product graduation",
+					
+				},
+				product_material: {
+					bsonType: "string",
+					description: "type string, it is required, and store the product material",
+					
+				},
+				product_price: {
+					bsonType: "decimal128",
+					description: "type float, it is required, and store the product material",
+					
+				},
+			},
+		},
+	},
+})
 
 db.createCollection('brand', {
 	validator: {
@@ -11,7 +46,7 @@ db.createCollection('brand', {
 				},
 				_id: {
 					bsonType: "objectId",
-					description: "type ObjectId, it is requires, and store corelated brand provider Id",
+					description: "type objectId, it is requires, and store corelated brand provider Id",
 				},
 			},
 		},
