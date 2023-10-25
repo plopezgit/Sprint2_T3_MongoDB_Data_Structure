@@ -1,0 +1,77 @@
+db.createCollection ('provider', {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: {"name", "address", "phone", "fax", "nif", "brand"}
+			properties: {
+				name: {
+					bsonRype: "string"
+					description: "type string, it is required, and stores the name of the provider"
+				},
+				address: {
+					bsonType: "object",
+					description: "type object, it is required, and stores the fields of the provider address",
+					required ["street", "number", "floor", "door", "city", "postal_code", "country"],
+					properties {
+						street: {
+							bsonRype: "string"
+							description: "type string, it is required, and stores the provider street"
+						},
+						number: {
+							bsonRype: "int"
+							description: "type int, it is required, and stores the provider street number"
+						},
+						floor: {
+							bsonRype: "int"
+							description: "type int, it is required, and stores the provider floor number"
+						},
+						door: {
+							bsonRype: "int"
+							description: "type int, it is required, and stores the provider door number"
+						},
+						city: {
+							bsonRype: "string"
+							description: "type string, it is required, and stores the provider city"
+						},
+						postal_code: {
+							bsonRype: "string"
+							description: "type string, it is required, and stores the provider postal code"
+						},
+						country: {
+							bsonRype: "string"
+							description: "type string, it is required, and stores the provider country"
+						},
+					}
+				},
+				phone: {
+					bsonRype: "string"
+					description: "type string, it is required, and stores the provider phone number"
+				},
+				fax: {
+					bsonRype: "string"
+					description: "type string, it is required, and stores the provider fax number"
+				},
+				nif: {
+					bsonRype: "string"
+					description: "type string, it is required, and stores the provider nif"
+				},
+				brand: {
+					bsonType: "object",
+					description: "type object, it is required, and stores the fields of the provider brands",
+					required ["brand_name", "_id"],
+					properties {
+						street: {
+							bsonRype: "string"
+							description: "type string, it is required, and stores the brand name"
+						},
+						_id: {
+							bsonRype: "ObjectId"
+							description: "type object, it is required, and stores the provider id related to brand"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+					
