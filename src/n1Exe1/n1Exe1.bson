@@ -1,10 +1,128 @@
+db.createCollection ('address', {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: ["street", "number", "floor", "door", "city", "postal_code", "country"],
+			properties: {
+				street: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the provider street",
+				},
+				number: {
+					bsonType: "int",
+					description: "type int, it is required, and stores the provider street number",
+				},
+				floor: {
+					bsonType: "int",
+					description: "type int, it is required, and stores the provider floor number",
+				},
+				door: {
+					bsonType: "int",
+					description: "type int, it is required, and stores the provider door number",
+				},
+				city: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the provider city",
+				},
+				postal_code: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the provider postal code",
+				},
+				country: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the provider country",
+				},
+			},
+		},
+	},
+})
+
+db.createCollection('client', {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: ["name", "_id_address", "phone", "email", "_id_client_referer", "signup_timestamp"],
+			properties: {
+				name: {
+					bsonType: "string",
+					description: "type string, it is required, and store the client name",
+				},
+				_id_address: {
+					bsonType: "objectId",
+					description: "type objectId, it is requires, and store corelated client address Id",
+				},
+				phone: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the client phone number",
+				},
+				email: {
+					bsonType: "string",
+					description: "type string, it is required, and stores the client email",
+				},
+				_id_client_referer: {
+					bsonType: "objectId",
+					description: "type objectId, it is requires, and store corelated client referer Id",
+				},
+				signup_timestamp: {
+					bsonType: "timestamp",
+					description: "type timestamp, it is required, and store the client signup timestamp",					
+				},
+			},
+		},
+	},
+})
+
+db.createCollection('sale', {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: ["_id_productList", "_id_vendor", "_id_client", "invoice_number", "timestamp"],
+			properties: {
+				_id_productList: {
+					bsonType: "array",
+					description: "type array, it is required, and store the product id list",
+					items: {
+						bsonType: "object",
+						required: ["_id_product"],
+						properties: {
+							_id_product: {
+								bsonType: "objectId",
+								description: "type objectId, it is required, and store the product id",
+							},
+						},
+					},
+				},
+				_id_vendor: {
+					bsonType: "int",
+					description: "type int, it is required, and store the vendor id",
+					
+				},
+				_id_client: {
+					bsonType: "objectId",
+					description: "type objectId, it is required, and store the client id",
+					
+				},
+				invoice_number: {
+					bsonType: "int",
+					description: "type int, it is required, and store the invoice number",
+					
+				},
+				timestamp: {
+					bsonType: "timestamp",
+					description: "type int, it is required, and store the invoice number",					
+				},
+			},
+		},
+	},
+})
+
 db.createCollection('glasses', {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: ["_id", "product_graduation_l", "product_graduation_r", "product_material", "product_price"],
+			required: ["_id_brand", "product_graduation_l", "product_graduation_r", "product_material", "product_price"],
 			properties: {
-				_id: {
+				_id_brand: {
 					bsonType: "objectId",
 					description: "type objectId, it is required, and store the product brand id",
 					
@@ -38,13 +156,13 @@ db.createCollection('brand', {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: ["brand_name", "_id"],
+			required: ["brand_name", "_id_provider"],
 			properties: {
 				brand_name: {
 					bsonType: "string",
 					description: "type string, it is required, and store the brand name",
 				},
-				_id: {
+				_id_provider: {
 					bsonType: "objectId",
 					description: "type objectId, it is requires, and store corelated brand provider Id",
 				},
@@ -66,35 +184,11 @@ db.createCollection('provider', {
 				address: {
 					bsonType: "object",
 					description: "type object, it is required, and stores the fields of the provider address",
-					required: ["street", "number", "floor", "door", "city", "postal_code", "country"],
+					required: ["_id_address"],
 					properties: {
-						street: {
-							bsonType: "string",
-							description: "type string, it is required, and stores the provider street",
-						},
-						number: {
-							bsonType: "int",
-							description: "type int, it is required, and stores the provider street number",
-						},
-						floor: {
-							bsonType: "int",
-							description: "type int, it is required, and stores the provider floor number",
-						},
-						door: {
-							bsonType: "int",
-							description: "type int, it is required, and stores the provider door number",
-						},
-						city: {
-							bsonType: "string",
-							description: "type string, it is required, and stores the provider city",
-						},
-						postal_code: {
-							bsonType: "string",
-							description: "type string, it is required, and stores the provider postal code",
-						},
-						country: {
-							bsonType: "string",
-							description: "type string, it is required, and stores the provider country",
+						_id_address: {
+							bsonType: "objectId",
+							description: "type objectId, it is required, and stores the provider address id",
 						},
 					},
 				},
@@ -114,4 +208,3 @@ db.createCollection('provider', {
 		},
 	},
 })
-					
