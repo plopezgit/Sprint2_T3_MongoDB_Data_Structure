@@ -1,32 +1,33 @@
-db.createColletion ('brand'. {
+
+
+db.createCollection ('brand'. {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: {"brand_name", "_id"}
+			required: {"brand_name", "_id"},
 			properties: {
 				brand_name: {
 					bsonType: "string",
-					description: "type string, it is required, and store the brand name"
+					description: "type string, it is required, and store the brand name",
 				},
 				_id: {
-					bsonType: "ObjectId"
-					descriptio: "type ObjectId, it is requires, and store corelated brand provider Id"
-				}
-			}
-		}
-
-	}
-})
+					bsonType: "ObjectId",
+					descriptio: "type ObjectId, it is requires, and store corelated brand provider Id",
+				},
+			},
+		},
+	},
+}),
 
 db.createCollection ('provider', {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: {"name", "address", "phone", "fax", "nif", "brand"}
+			required: {"name", "address", "phone", "fax", "nif", "brand"},
 			properties: {
 				name: {
 					bsonType: "string",
-					description: "type string, it is required, and stores the name of the provider"
+					description: "type string, it is required, and stores the name of the provider",
 				},
 				address: {
 					bsonType: "object",
@@ -35,48 +36,48 @@ db.createCollection ('provider', {
 					properties {
 						street: {
 							bsonType: "string",
-							description: "type string, it is required, and stores the provider street"
+							description: "type string, it is required, and stores the provider street",
 						},
 						number: {
 							bsonType: "int",
-							description: "type int, it is required, and stores the provider street number"
+							description: "type int, it is required, and stores the provider street number",
 						},
 						floor: {
 							bsonType: "int",
-							description: "type int, it is required, and stores the provider floor number"
+							description: "type int, it is required, and stores the provider floor number",
 						},
 						door: {
 							bsonType: "int",
-							description: "type int, it is required, and stores the provider door number"
+							description: "type int, it is required, and stores the provider door number",
 						},
 						city: {
 							bsonType: "string",
-							description: "type string, it is required, and stores the provider city"
+							description: "type string, it is required, and stores the provider city",
 						},
 						postal_code: {
 							bsonType: "string",
-							description: "type string, it is required, and stores the provider postal code"
+							description: "type string, it is required, and stores the provider postal code",
 						},
 						country: {
 							bsonType: "string",
-							description: "type string, it is required, and stores the provider country"
+							description: "type string, it is required, and stores the provider country",
 						},
-					}
+					},
 				},
 				phone: {
 					bsonType: "string",
-					description: "type string, it is required, and stores the provider phone number"
+					description: "type string, it is required, and stores the provider phone number",
 				},
 				fax: {
 					bsonType: "string",
-					description: "type string, it is required, and stores the provider fax number"
+					description: "type string, it is required, and stores the provider fax number",
 				},
 				nif: {
 					bsonType: "string",
-					description: "type string, it is required, and stores the provider nif"
-				}
-			}
-		}
-	}
-})
+					description: "type string, it is required, and stores the provider nif",
+				},
+			},
+		},
+	},
+}),
 					
