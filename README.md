@@ -8,7 +8,7 @@ Exercise 1
 
 An optician wants to computerize customer management and glasses sales.
 
-![Optic](src/n1Exe1/n1Exe1_model.png)
+![Optic](src/n1Exe1/n1Exe1_model_references.png)
 
 
 First of all, the optician wants to know the supplier of each of the glasses. Specifically, you want to know about each supplier:
