@@ -10,12 +10,12 @@ db.createCollection('glasses', {
 					
 				},
 				product_graduation_l: {
-					bsonType: "float",
+					bsonType: "decimal128",
 					description: "type float, it is required, and store the product graduation",
 					
 				},
 				product_graduation_r: {
-					bsonType: "float",
+					bsonType: "decimal128",
 					description: "type float, it is required, and store the product graduation",
 					
 				},
