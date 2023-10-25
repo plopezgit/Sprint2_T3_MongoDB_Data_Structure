@@ -1,3 +1,5 @@
+
+
 db.createCollection ('provider', {
 	validator: {
 		$jsonSchema: {
@@ -73,5 +75,5 @@ db.createCollection ('provider', {
 			}
 		}
 	}
-}
+})
 					
