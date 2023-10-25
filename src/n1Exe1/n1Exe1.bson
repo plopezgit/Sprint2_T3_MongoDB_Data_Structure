@@ -1,4 +1,22 @@
+db.createColletion ('brand'. {
+	validator: {
+		$jsonSchema: {
+			bsonType: "object",
+			required: {"brand_name", "_id"}
+			properties: {
+				brand_name: {
+					bsonType: "string",
+					description: "type string, it is required, and store the brand name"
+				},
+				_id: {
+					bsonType: "ObjectId"
+					descriptio: "type ObjectId, it is requires, and store corelated brand provider Id"
+				}
+			}
+		}
 
+	}
+})
 
 db.createCollection ('provider', {
 	validator: {
@@ -7,7 +25,7 @@ db.createCollection ('provider', {
 			required: {"name", "address", "phone", "fax", "nif", "brand"}
 			properties: {
 				name: {
-					bsonRype: "string"
+					bsonType: "string",
 					description: "type string, it is required, and stores the name of the provider"
 				},
 				address: {
@@ -16,61 +34,46 @@ db.createCollection ('provider', {
 					required ["street", "number", "floor", "door", "city", "postal_code", "country"],
 					properties {
 						street: {
-							bsonRype: "string"
+							bsonType: "string",
 							description: "type string, it is required, and stores the provider street"
 						},
 						number: {
-							bsonRype: "int"
+							bsonType: "int",
 							description: "type int, it is required, and stores the provider street number"
 						},
 						floor: {
-							bsonRype: "int"
+							bsonType: "int",
 							description: "type int, it is required, and stores the provider floor number"
 						},
 						door: {
-							bsonRype: "int"
+							bsonType: "int",
 							description: "type int, it is required, and stores the provider door number"
 						},
 						city: {
-							bsonRype: "string"
+							bsonType: "string",
 							description: "type string, it is required, and stores the provider city"
 						},
 						postal_code: {
-							bsonRype: "string"
+							bsonType: "string",
 							description: "type string, it is required, and stores the provider postal code"
 						},
 						country: {
-							bsonRype: "string"
+							bsonType: "string",
 							description: "type string, it is required, and stores the provider country"
 						},
 					}
 				},
 				phone: {
-					bsonRype: "string"
+					bsonType: "string",
 					description: "type string, it is required, and stores the provider phone number"
 				},
 				fax: {
-					bsonRype: "string"
+					bsonType: "string",
 					description: "type string, it is required, and stores the provider fax number"
 				},
 				nif: {
-					bsonRype: "string"
+					bsonType: "string",
 					description: "type string, it is required, and stores the provider nif"
-				},
-				brand: {
-					bsonType: "object",
-					description: "type object, it is required, and stores the fields of the provider brands",
-					required ["brand_name", "_id"],
-					properties {
-						street: {
-							bsonRype: "string"
-							description: "type string, it is required, and stores the brand name"
-						},
-						_id: {
-							bsonRype: "ObjectId"
-							description: "type object, it is required, and stores the provider id related to brand"
-						}
-					}
 				}
 			}
 		}
