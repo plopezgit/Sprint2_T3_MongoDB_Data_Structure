@@ -1,29 +1,28 @@
 
-
-db.createCollection ('brand'. {
+db.createCollection('brand', {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: {"brand_name", "_id"},
+			required: ["brand_name", "_id"],
 			properties: {
 				brand_name: {
 					bsonType: "string",
 					description: "type string, it is required, and store the brand name",
 				},
 				_id: {
-					bsonType: "ObjectId",
-					descriptio: "type ObjectId, it is requires, and store corelated brand provider Id",
+					bsonType: "objectId",
+					description: "type ObjectId, it is requires, and store corelated brand provider Id",
 				},
 			},
 		},
 	},
-}),
+})
 
-db.createCollection ('provider', {
+db.createCollection('provider', {
 	validator: {
 		$jsonSchema: {
 			bsonType: "object",
-			required: {"name", "address", "phone", "fax", "nif", "brand"},
+			required: ["name", "address", "phone", "fax", "nif", "brand"],
 			properties: {
 				name: {
 					bsonType: "string",
@@ -32,8 +31,8 @@ db.createCollection ('provider', {
 				address: {
 					bsonType: "object",
 					description: "type object, it is required, and stores the fields of the provider address",
-					required ["street", "number", "floor", "door", "city", "postal_code", "country"],
-					properties {
+					required: ["street", "number", "floor", "door", "city", "postal_code", "country"],
+					properties: {
 						street: {
 							bsonType: "string",
 							description: "type string, it is required, and stores the provider street",
@@ -79,5 +78,5 @@ db.createCollection ('provider', {
 			},
 		},
 	},
-}),
+})
 					
