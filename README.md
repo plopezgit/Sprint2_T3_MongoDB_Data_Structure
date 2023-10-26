@@ -8,7 +8,13 @@ Exercise 1
 
 An optician wants to computerize customer management and glasses sales.
 
+_Solution 1: Reference relational model (strict validation scheme):_
+
 ![Optic](src/n1Exe1/n1Exe1_model_references.png)
+
+_Solution 2: Enmbedded objects model:_
+
+![Optic](src/n1Exe1/n1Exe1_model_embeddedObjects.png)
 
 
 First of all, the optician wants to know the supplier of each of the glasses. Specifically, you want to know about each supplier:
@@ -48,7 +54,7 @@ Exercise 2
 
 You have been hired to design a website that allows you to order food at home online.
 
-{soon}
+![Optic](src/n1Exe2/n1Exe2_model.png)
 
 Take into account the following indications to model what the project database would be like.
 

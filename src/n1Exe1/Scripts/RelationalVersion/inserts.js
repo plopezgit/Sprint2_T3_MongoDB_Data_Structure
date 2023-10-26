@@ -7,7 +7,7 @@ db.address.insertOne({
 	city: "Clop",
 	postal_code: "076434",
 	country: "Cris"
-});
+})
 
 db.client.insertMany([{
 	name: "Ryal",
@@ -49,18 +49,26 @@ db.glasses.insertOne({
 	product_graduation_r: Decimal128("1.0"),
 	product_material: "Plastic",
 	product_price: Decimal128("453.00"),
-});
+})
 
 db.brand.insertOne({
 	brand_name: "Giorgio Arm",
 	_id_provider: ObjectId("6539117e39f21524d94710c0"),
 	
-});
+})
 
 db.provider.insertOne({
 	name: "Giorgio Arm",
-	address: ObjectId("65390bce39f21524d94710bd"),
+	address: {
+		street: "Carlino",
+		number: 4,
+		floor: 4,
+		door: 2,
+		city: "Cori",
+		postal_code: "078534",
+		country: "Cris",
+	},
 	phone: "657474632",
 	fax: "657453621",
 	nif: "T764372654L"	
-});
+})
