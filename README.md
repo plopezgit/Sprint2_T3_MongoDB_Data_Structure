@@ -109,7 +109,7 @@ Level 2
 
 Exercise 1
 
-{soon}
+![Optic](src/n2Exe1/n2Exe1_model.png)
 
 
 We will try to make a simple model of what the database would be like for a reduced version of YouTube.
